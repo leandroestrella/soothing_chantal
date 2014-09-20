@@ -1,4 +1,4 @@
-soothingChantal
+soothing chantal
 ===============
 
 Generative Video Lullaby
