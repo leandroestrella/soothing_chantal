@@ -2,8 +2,23 @@
 
 ![soothing chantal art cover](https://c2.staticflickr.com/6/5582/15102001878_8861ea499d.jpg)
 
-*A generative lullaby made with processing*
+*A generative lullaby made with [p5.js](https://p5js.org/)*
 
-Documentation:
+## Running
+
+1. Place your video file at `data/lala.oggtheora.ogv`
+2. Serve the project directory with any static HTTP server, for example:
+   ```bash
+   # Python
+   python -m http.server 8000
+
+   # Node.js
+   npx serve .
+   ```
+3. Open `http://localhost:8000` in a browser and click to start
+
+> A video file is required for the sketch to work. The original `.pde` Processing sketch is kept for reference.
+
+## Documentation
 - Video: http://vimeo.com/106598680 / https://youtu.be/1dVaOp7sOe4
 - Audio: https://soundcloud.com/estrellaleandro/soothing-chantal
