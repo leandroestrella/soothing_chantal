@@ -19,6 +19,7 @@ let firstClipVideo;
 let myVideos = [];
 let videosPlaying = [];
 let started = false;
+let lastFrameTime = -1;
 
 function preload() {
   // Videos are created in setup after user interaction
@@ -65,11 +66,14 @@ function draw() {
     return;
   }
 
-  // Draw and analyze the first clip
-  let vidWidth = firstClipVideo.width;
-  let vidHeight = firstClipVideo.height;
+  // Detect new frame availability (mirrors Processing's Movie.available())
+  let currentTime = firstClipVideo.time();
+  let frameAvailable = currentTime !== lastFrameTime && firstClipVideo.width > 0;
 
-  if (vidWidth > 0 && vidHeight > 0) {
+  if (frameAvailable) {
+    lastFrameTime = currentTime;
+    let vidWidth = firstClipVideo.width;
+    let vidHeight = firstClipVideo.height;
     tint(255, 50);
     image(firstClipVideo, 0, 0, width, height);
 
@@ -99,7 +103,6 @@ function draw() {
       oldY = brightestY;
     }
   } else if (oldX <= 200) {
-    // When video is not available and brightest X is low, add another video layer
     rand = floor(random(MAX_MOVIES));
     videosPlaying.push(myVideos[rand]);
     videosPlaying[videosPlaying.length - 1].loop();
