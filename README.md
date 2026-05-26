@@ -6,7 +6,7 @@
 
 ## Running
 
-1. Place your video file in the `data/` directory. The sketch tries multiple formats for cross-browser support: `.ogv`, `.mp4`, and `.webm`. Provide at least one (e.g. `data/lala.oggtheora.mp4`)
+1. Place your video file in the `data/` directory. The sketch tries multiple formats for cross-browser support: `.mp4`, `.webm`, and `.ogv` (in that order). Provide at least one (e.g. `data/lala.oggtheora.mp4`)
 2. Serve the project directory with any static HTTP server, for example:
    ```bash
    # Python

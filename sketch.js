@@ -9,9 +9,9 @@
 
 const MAX_MOVIES = 6;
 const VIDEO_SOURCES = [
-  "data/lala.oggtheora.ogv",
   "data/lala.oggtheora.mp4",
-  "data/lala.oggtheora.webm"
+  "data/lala.oggtheora.webm",
+  "data/lala.oggtheora.ogv"
 ];
 
 let isPlaying = true;
