@@ -8,7 +8,11 @@
  */
 
 const MAX_MOVIES = 6;
-const VIDEO_SRC = "data/lala.oggtheora.ogv";
+const VIDEO_SOURCES = [
+  "data/lala.oggtheora.ogv",
+  "data/lala.oggtheora.mp4",
+  "data/lala.oggtheora.webm"
+];
 
 let isPlaying = true;
 let rand;
@@ -32,12 +36,12 @@ function setup() {
 
   rand = floor(random(MAX_MOVIES));
 
-  firstClipVideo = createVideo(VIDEO_SRC);
-  firstClipVideo.hide(); // hide the default HTML element
+  firstClipVideo = createVideo(VIDEO_SOURCES);
+  firstClipVideo.hide();
   firstClipVideo.volume(0.5);
 
   for (let i = 0; i < MAX_MOVIES; i++) {
-    myVideos[i] = createVideo(VIDEO_SRC);
+    myVideos[i] = createVideo(VIDEO_SOURCES);
     myVideos[i].hide();
     myVideos[i].volume(0);
   }
